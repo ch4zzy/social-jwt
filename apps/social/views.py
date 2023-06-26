@@ -31,7 +31,8 @@ class PostViewSet(viewsets.ModelViewSet, mixins.ListModelMixin):
     def user_list(self, request, pk):
         """
         Returns a list of posts for current user.
-        GET: ~/api/post/{pk}/
+        GET: ~/api/post/
+        GET: ~/api/post/{pk}/ - detail post
         """
 
         owner = get_object_or_404(User, id=pk)

@@ -1,7 +1,13 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 
-from apps.social.views import PostViewSet, UserViewSet, PostActionAPIView, AnalyticsViewSet, UserActivityViewSet
+from apps.social.views import (
+    AnalyticsViewSet,
+    PostActionAPIView,
+    PostViewSet,
+    UserActivityViewSet,
+    UserViewSet,
+)
 
 app_name = "api_social"
 

@@ -1,7 +1,8 @@
-from rest_framework.exceptions import ValidationError
-from django.conf import settings
 from datetime import datetime
-from rest_framework import status
+
+from django.conf import settings
+from rest_framework.exceptions import ValidationError
+
 
 def validate_unique_like(user, post):
     """
@@ -29,8 +30,8 @@ def validate_date_format(value):
     """
 
     if value != datetime.strptime(value, "%d-%m-%Y").date():
-            if settings.DEBUG:
-                raise ValidationError("Invalid date format. Please use the format 'dd-mm-yyyy'.")
+        if settings.DEBUG:
+            raise ValidationError("Invalid date format. Please use the format 'dd-mm-yyyy'.")
     return value
 
 
@@ -42,4 +43,3 @@ def validate_date(date_from, date_to):
     if date_from > date_to:
         if settings.DEBUG:
             raise ValidationError("Invalid date combination. Check again.")
-        

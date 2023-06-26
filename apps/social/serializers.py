@@ -39,7 +39,7 @@ class PostAnalyticsSerializer(serializers.ModelSerializer):
     """
     Serializer for the post analytics.
     """
-    
+
     date_from = serializers.DateField()
     date_to = serializers.DateField()
 

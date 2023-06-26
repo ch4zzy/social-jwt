@@ -4,6 +4,10 @@ from django.db import models
 
 
 class Post(models.Model):
+    """
+    Model representing a user's post with ownership, timestamps, and user likes.
+    """
+    
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
